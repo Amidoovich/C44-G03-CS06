@@ -51,6 +51,35 @@ namespace S6
             }
             return Sum;
            }
+        public static bool IsPrime(int Num)
+        {
+            if (Num < 2)
+                return false;
+            for (int i = 2; i < Num; i++)
+            {
+                if (Num % i == 0)
+                    return false;
+            }
+            return true;
+
+        }
+        public static void MinMaxArray(ref int[] Arr , ref int Max , ref int min )
+        {
+            if(Arr.Length == 0)
+                return;
+            else
+            {
+                Max = Arr[0];
+                min = Arr[0];
+                for (int i = 0; i<Arr.Length;i++)
+                {
+                    if (Max < Arr[i])
+                        Max = Arr[i];
+                    if(min > Arr[i])
+                        min = Arr[i];
+                }
+            }
+        }
         #endregion
         static void Main(string[] args)
         {
@@ -109,6 +138,24 @@ namespace S6
             //Console.WriteLine($"The sum of the digits of the number {Num} is: {SumOfIndividualDigitsOfNumber(Num)}");
 
             #endregion
+            #region Q5 Create a function named "IsPrime", which receives an integer number and retuns true if it is prime, or false if it is not:
+            //bool IsParse;
+            //int Num;
+            //do
+            //{
+            //    Console.Write("please enter the Number : ");
+            //    IsParse = int.TryParse(Console.ReadLine(), out Num);
+
+            //} while (!IsParse);
+            //Console.WriteLine(IsPrime(Num));
+            #endregion
+            #region Q6 Create a function named MinMaxArray, to return the minimum and maximum values stored in an array, using reference parameters
+            //int[] Numbers = {1,2,3,7,5,6,9,8};
+            //int Max = 0,Min = 0;
+            //MinMaxArray(ref Numbers, ref Max,ref Min);
+            //Console.WriteLine($"the max value is {Max}");
+            //Console.WriteLine($"the min value is {Min}");
+            #endregion 
 
 
         }
