@@ -1,4 +1,5 @@
 ﻿using System.Runtime.InteropServices;
+using System.Threading.Tasks.Dataflow;
 
 namespace S6
 {
@@ -298,6 +299,26 @@ namespace S6
 
 
             #endregion
+            #endregion
+            #endregion
+            #region Boxing , Unboxing
+            #region Boxing [Value Type => Reference Type]
+            //int X = 100;
+
+            //object obj = X;
+
+            //obj = 1.2;
+            //obj = 'A';
+            //obj = true;
+            //obj = 1.2m;
+
+
+            #endregion
+            #region Unboxing [Reference Type => Value Type]
+            //object obj = 10;
+
+            //int X = (int)obj;
+            //Console.WriteLine(X);
             #endregion
             #endregion
 
