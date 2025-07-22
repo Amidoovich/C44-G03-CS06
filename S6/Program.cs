@@ -29,6 +29,26 @@
             X = Y;
             Y = Temp;
         }
+        public static int SumArray(int[] Arr)
+        {
+            int Sum = 0;
+            Arr[0] = 100;
+            for (int i = 0; i < Arr.Length; i++)
+            {
+                Sum += Arr[i];
+            }
+            return Sum;
+        }
+        public static int SumArray(ref int[] Arr)
+        {
+            int Sum = 0;
+            Arr[0] = 100;
+            for (int i = 0; i < Arr.Length; i++)
+            {
+                Sum += Arr[i];
+            }
+            return Sum;
+        }
         #endregion
         static void Main(string[] args)
         {
@@ -204,6 +224,23 @@
             //Swap(ref A,ref B);
             //Console.WriteLine(A);
             //Console.WriteLine(B);
+            #endregion
+            #endregion
+            #region Functions Parameters [Reference Type]
+            #region Example 01
+            #region Passing By Value
+            //int[] Numbers = {1,2,3};
+
+            //Console.WriteLine(SumArray(Numbers));
+            //Console.WriteLine(Numbers[0]);
+            #endregion
+            #region Passing By Reference 
+            //int[] Numbers = { 1, 2, 3 };
+
+            //Console.WriteLine(SumArray(ref Numbers));
+            //Console.WriteLine(Numbers[0]);
+            #endregion
+
             #endregion
             #endregion
             #endregion
