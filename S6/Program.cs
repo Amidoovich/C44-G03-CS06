@@ -19,7 +19,7 @@ namespace S6
         public static int SumArray(int[] Arr)
         {
             int Sum = 0;
-            Arr = new int[] {10,20,30,40};
+            Arr = new int[] { 10, 20, 30, 40 };
             for (int i = 0; i < Arr.Length; i++)
             {
                 Sum += Arr[i];
@@ -36,7 +36,7 @@ namespace S6
             }
             return Sum;
         }
-        public static void SumSub(int Num1, int Num2,out int Sum, out int Sub)
+        public static void SumSub(int Num1, int Num2, out int Sum, out int Sub)
         {
             Sum = Num1 + Num2;
             Sub = Num1 - Num2;
@@ -50,7 +50,7 @@ namespace S6
                 Num /= 10;
             }
             return Sum;
-           }
+        }
         public static bool IsPrime(int Num)
         {
             if (Num < 2)
@@ -63,22 +63,45 @@ namespace S6
             return true;
 
         }
-        public static void MinMaxArray(ref int[] Arr , ref int Max , ref int min )
+        public static void MinMaxArray(ref int[] Arr, ref int Max, ref int min)
         {
-            if(Arr.Length == 0)
+            if (Arr.Length == 0 || Arr is null)
+            {
+                Console.WriteLine("the array is empty or null");
                 return;
+            }
             else
             {
                 Max = Arr[0];
                 min = Arr[0];
-                for (int i = 0; i<Arr.Length;i++)
+                for (int i = 0; i < Arr.Length; i++)
                 {
                     if (Max < Arr[i])
                         Max = Arr[i];
-                    if(min > Arr[i])
+                    if (min > Arr[i])
                         min = Arr[i];
                 }
             }
+        }
+        public static int Factorial(int Num)
+        {
+            int Factorial = 1;
+            for (int i = 1; i <= Num; i++)
+            {
+                Factorial *= i;
+            }
+            return Factorial;
+        }
+        public static string ChangeChar(string str, int index, char Ch)
+        {
+            if (str is null)
+                return "the string is null";
+            if (index > str.Length - 1 || index < 0)
+                return "the index is out of range";
+
+            char[] StrArray = str.ToCharArray();
+            StrArray[index] = Ch;
+            return new string(StrArray);
         }
         #endregion
         static void Main(string[] args)
@@ -155,9 +178,35 @@ namespace S6
             //MinMaxArray(ref Numbers, ref Max,ref Min);
             //Console.WriteLine($"the max value is {Max}");
             //Console.WriteLine($"the min value is {Min}");
-            #endregion 
+            #endregion
+            #region Q7 Create an iterative (non-recursive) function to calculate the factorial of the number specified as parameter
+            //bool IsParse;
+            //int Num;
+            //do
+            //{
+            //    Console.Write("please enter the Number : ");
+            //    IsParse = int.TryParse(Console.ReadLine(), out Num);
 
+            //} while (!IsParse);
+            //Console.WriteLine(Factorial(Num));
+            #endregion
+            #region Q8 Create a function named "ChangeChar" to modify a letter in a certain position (0 based) of a string, replacing it with a different letter
+            //bool IsParse1, IsParse2;
+            //int index;
+            //string? str;
+            //char ch;
+            //do
+            //{
+            //    Console.Write("please enter the string : ");
+            //    str = Console.ReadLine();
+            //    Console.Write("please enter the Number : ");
+            //    IsParse1 = int.TryParse(Console.ReadLine(), out index);
+            //    Console.Write("please enter  the char : ");
+            //    IsParse2 = Char.TryParse(Console.ReadLine(), out ch);
 
+            //} while (!IsParse1 || str == "" || !IsParse2 );
+            //Console.WriteLine(ChangeChar(str,index,ch));
+            #endregion
         }
     }
 }
