@@ -1,4 +1,6 @@
-﻿namespace S6
+﻿using System.Runtime.InteropServices;
+
+namespace S6
 {
     internal class Program
     {
@@ -50,6 +52,14 @@
                 Sum += Arr[i];
             }
             return Sum;
+        }
+        public static void SumSub(int X, int Y , out int Sum ,out int Sub)
+        {
+             Sum = X + Y;
+             Sub = X - Y;
+            //return new int[] {Sum, Sub};
+            //return [Sum, Sub];
+            //return new { Sum, Sub };
         }
         #endregion
         static void Main(string[] args)
@@ -258,6 +268,11 @@
             //Console.WriteLine(Numbers[0]);
             #endregion
             #endregion
+            #endregion
+            #region Functions Parameters [Passing By Out]
+            //SumSub(10, 5, out int S, out int B);
+            //Console.WriteLine(S);
+            //Console.WriteLine(B);
             #endregion
             #endregion
 
