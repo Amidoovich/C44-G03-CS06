@@ -6,38 +6,20 @@ namespace S6
 {
     internal class Program
     {
-        // types of methods 
-        // 1. class member function [static class]
-        // 2. object member function [non-static class]
-        // Employee => static print , Non-static Select
-        //Employee.print
-        //Employee Emp01 = new Employee();
-        //Emp01.Select
+
         #region Methods
-        public static void PrintShape(int Count = 5, string Pattern = ":(")
+        public static void IncrementVriableBy10(int Num1)
         {
-            for (int i = 0; i < Count; i++)
-            {
-                Console.WriteLine(Pattern);
-            }
+            Num1 += 10;
         }
-        public static void Swap(int X,int Y)
+        public static void IncrementVriableBy10(ref int Num1)
         {
-            int Temp = X;
-            X = Y;
-            Y = Temp;
+            Num1 += 10;
         }
-        public static void Swap(ref int X,ref int Y)
-        {
-            int Temp = X;
-            X = Y;
-            Y = Temp;
-        }
-        public static int SumArray(params int[] Arr)
+        public static int SumArray(int[] Arr)
         {
             int Sum = 0;
-            //Arr[0] = 100;
-            //Arr = new int[] {10,20,30,40};
+            Arr = new int[] {10,20,30,40};
             for (int i = 0; i < Arr.Length; i++)
             {
                 Sum += Arr[i];
@@ -47,359 +29,87 @@ namespace S6
         public static int SumArray(ref int[] Arr)
         {
             int Sum = 0;
-            //Arr[0] = 100;
-            //Arr = new int[] { 10, 20, 30, 40 };
+            Arr = new int[] { 10, 20, 30, 40 };
             for (int i = 0; i < Arr.Length; i++)
             {
                 Sum += Arr[i];
             }
             return Sum;
         }
-        public static void SumSub(int X, int Y , out int Sum ,out int Sub)
+        public static void SumSub(int Num1, int Num2,out int Sum, out int Sub)
         {
-             Sum = X + Y;
-             Sub = X - Y;
-            //return new int[] {Sum, Sub};
-            //return [Sum, Sub];
-            //return new { Sum, Sub };
+            Sum = Num1 + Num2;
+            Sub = Num1 - Num2;
         }
-        public static void Concat<T> (params ReadOnlySpan<T> items)
+        public static int SumOfIndividualDigitsOfNumber(int Num)
         {
-            for (int i = 0; i < items.Length; i++)
+            int Sum = 0;
+            while (Num != 0)
             {
-                Console.WriteLine($"{items[i]}");
+                Sum += (Num % 10);
+                Num /= 10;
             }
-        }
+            return Sum;
+           }
         #endregion
         static void Main(string[] args)
         {
-            #region Array
-            #region 1D Array
-            #region Example 01
-            //int[] Numbers;
-            //Numbers = new int[3];
 
-            //Numbers[0] = 1;
-            //Numbers[1] = 2;
-            //Numbers[2] = 3;
+            #region Q1 Explain the difference between passing (Value type parameters) by value and by reference then write a suitable c# example.
 
-            //Console.WriteLine(Numbers[0]);
-            //Console.WriteLine(Numbers[1]);
-            //Console.WriteLine(Numbers[2]);
-
-
-            //Console.WriteLine(Numbers.Length);
-            //Console.WriteLine(Numbers.Rank);
-
-            //for (int i = 0; i < 3; i++) 
-            //{
-            //    Console.WriteLine(Numbers[i]);
-            //}
-
-            //foreach (int i in Numbers) 
-            //{
-            //    Console.WriteLine(i);
-            //}
-
-
-            #endregion
-            #region Array Creation Ways
-            //int[] Numbers01 = new int[3];
-            //int[] Numbers02 =  new int[3] { 1, 2, 3} ;
-            //int[] Numbers03 =  new int[] { 1, 2, 3} ;
-            //int[] Numbers04 = { 1, 2, 3} ;
-            #endregion
-
-            #endregion
-            #region 2D Array [Rectangular]
-
-            //int[,] Marks = new int[2, 5] { { 100, 90, 30, 50, 40 }, { 20, 10, 68, 77, 80 } };
-            //Marks[0, 0] = 100;
-            //Marks[0, 1] = 90;
-            //Marks[0, 2] = 40;
-            //Marks[0, 3] = 80;
-            //Marks[0, 4] = 60;
-            //Marks[1, 0] = 99;
-            //Marks[1, 1] = 80;
-            //Marks[1, 2] = 44;
-            //Marks[1, 3] = 40;
-            //Marks[1, 4] = 98;
-
-            //Console.WriteLine(Marks.Length);
-            //Console.WriteLine(Marks.Rank);
-            //Console.WriteLine(Marks.GetLength(0));
-            //Console.WriteLine(Marks.GetLength(1));
-
-            //int[,] Marks = new int[2, 5];
-
-            //for (int i = 0; i < Marks.GetLength(0); i++)
-            //{
-            //    Console.WriteLine($"the grades of student Number {i + 1}");
-            //    for (int j = 0; j < Marks.GetLength(1); /*j++*/)
-            //    {
-            //        Console.Write($"Subject Number {j + 1} : ");
-            //        bool IsParse = int.TryParse(Console.ReadLine(), out Marks[i, j]);
-            //        if (IsParse)
-            //            j++;
-            //    }
-            //    Console.WriteLine("===============================");
-            //}
-            //// print
-            //Console.Clear();
-            //for (int i = 0; i < Marks.GetLength(0); i++)
-            //{
-            //    Console.WriteLine($"the grades of student Number {i + 1}");
-            //    for (int j = 0; j < Marks.GetLength(1); j++)
-            //    {
-            //        Console.WriteLine($"Subject Number {j + 1} : {Marks[i, j]}");
-
-            //    }
-            //    Console.WriteLine("===============================");
-            //}
-            //for (int i = 0; i < Marks.Length; i++)
-            //{
-            //    Console.WriteLine(Marks[i / Marks.GetLength(1),i % Marks.GetLength(1)]);
-            //}
-
-            #endregion
-            #region Jagged Array
-            //int[][] JaggedArr = new int[3][];
-            //JaggedArr[0] = new int[3] {1,2,3};
-            //JaggedArr[1] = new int[2] {1,2};
-            //JaggedArr[2] = new int[1] {1};
-
-            ////JaggedArr[0][1] = 5;
-            //for (int i = 0; i<JaggedArr.Length; i++)
-            //{
-            //    for (int j = 0; j < JaggedArr[i].Length; j++)
-            //    {
-            //        Console.Write($"{JaggedArr[i][j]} ");
-            //    }
-            //    Console.WriteLine();
-            //}
-            #endregion
-            #region Array Methods
-            //int[] Numbers = { 5, 3, 2, 4, 5 };
-
-            //for (int i = 0; i < Numbers.Length; i++)
-            //{
-            //    Console.WriteLine(Numbers[i]);
-            //}
-            //Console.WriteLine("After Sorting");
-            //Array.Sort(Numbers);
-            //for (int i = 0; i < Numbers.Length; i++)
-            //{
-            //    Console.WriteLine(Numbers[i]);
-            //}
-            //Console.WriteLine("After Reversing");
-            //Array.Reverse(Numbers);
-            //for (int i = 0; i < Numbers.Length; i++)
-            //{
-            //    Console.WriteLine(Numbers[i]);
-            //}
-            //Console.WriteLine("After Clearing");
-            //Array.  Clear(Numbers,2,2);
-            //for (int i = 0; i < Numbers.Length; i++)
-            //{
-            //    Console.WriteLine(Numbers[i]);
-            //}
-
-            //Console.WriteLine(Array.IndexOf(Numbers,5));
-            //Console.WriteLine(Array.LastIndexOf(Numbers,5));
-            //Console.WriteLine(Array.IndexOf(Numbers,4));
-
-            //Array.Resize(ref Numbers, 10);
-
-
-            #endregion
-            #endregion
-            #region Functions
-            #region Functions Prototype
-            //PrintShape(10,":(");
-            //PrintShape(Pattern: ":(", Count: 10);
-
-            //PrintShape(10,"123");
-            //PrintShape(Pattern:"+L+");
-            //PrintShape(Pattern:@"Welcomwe Mostafa \Hello Amr");
-            //PrintShape(Pattern:@"/*\");
-
-            #endregion
-            #region Function Parameters [Value Type]
-            #region Passing by Value
-
-            //int A = 9;
-            //int B = 4;
+            #region Passing by value
+            // in this example we pass a copy of value of variable Then the increment ocuured on the variable in stak fram in the method  not on A 
+            //int A = 20;
+            //IncrementVriableBy10(A);
             //Console.WriteLine(A);
-            //Console.WriteLine(B);
-            //Console.WriteLine("After Swaping");
-            //Swap(A, B);
-            //Console.WriteLine(A);
-            //Console.WriteLine(B);
             #endregion
-            #region Passing by Refrence
-            //int A = 9;
-            //int B = 4;
+            #region passing by reference  
+            // in this example we pass the A By Ref not the copy of the the increment ocuured on A 
+            //int A = 20;
+            //IncrementVriableBy10(ref A);
             //Console.WriteLine(A);
-            //Console.WriteLine(B);
-            //Console.WriteLine("After Swaping");
-            //Swap(ref A,ref B);
-            //Console.WriteLine(A);
-            //Console.WriteLine(B);
             #endregion
-            #endregion
-            #region Functions Parameters [Reference Type]
-            #region Example 01
-            #region Passing By Value
-            //int[] Numbers = {1,2,3};
 
-            //Console.WriteLine(SumArray(Numbers));
-            //Console.WriteLine(Numbers[0]);
             #endregion
-            #region Passing By Reference 
+            #region Q2 Explain the difference between passing (Reference type parameters) by value and by reference then write a suitable c# example.
             //int[] Numbers = { 1, 2, 3 };
-
-            //Console.WriteLine(SumArray(ref Numbers));
-            //Console.WriteLine(Numbers[0]);
-            #endregion
-
-            #endregion
-            #region Example 02
-            #region Passing By Value
-            //int[] Numbers = { 1, 2, 3 };
-
+            #region passing By Value
+            // in this example we pass the address of Numbers Array then we make array Arr to point on the same object that Number array point it when change that the Arr to point in another object the Number doesn't point on it then the method give the sum of new object but the values in Number array doesn't change
             //Console.WriteLine(SumArray(Numbers));
             //Console.WriteLine(Numbers[0]);
             #endregion
             #region Passing By Reference
-            //int[] Numbers = { 1, 2, 3 };
-
+            // in this example we pass the address of Numbers Array then we change that the numbers Array to point on the new object then the method give the sum of new object and values in Number array changed
             //Console.WriteLine(SumArray(ref Numbers));
             //Console.WriteLine(Numbers[0]);
             #endregion
             #endregion
-            #endregion
-            #region Functions Parameters [Passing By Out]
-            //SumSub(10, 5, out int S, out int B);
-            //Console.WriteLine(S);
-            //Console.WriteLine(B);
-            #endregion
-            #region Function Parameters [Params]
-            #region Before C# 13
-            //int[] Numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            //int Result = SumArray(1, 2, 3, 4, 5, 6, 7, 8, 9);
-            //Console.WriteLine(Result);
-
-            //string Message = string.Format("Hello {0} Your Age is {1}","Ahmed",21);
-            //Console.WriteLine("Hello {0} Your Age is {1}", "Ahmed", 21);
-
-            #region After C# 13
-
-            //Concat<Object>("Hello Ahmed", "Welcome to Route", "Your number is", 123456, "Date is ",DateTime.Now);
-
-            #endregion
-
-
-            #endregion
-            #endregion
-            #endregion
-            #region Boxing , Unboxing
-            #region Boxing [Value Type => Reference Type]
-            //int X = 100;
-
-            //object obj = X;
-
-            //obj = 1.2;
-            //obj = 'A';
-            //obj = true;
-            //obj = 1.2m;
-
-
-            #endregion
-            #region Unboxing [Reference Type => Value Type]
-            //object obj = 10;
-
-            //int X = (int)obj;
-            //Console.WriteLine(X);
-            #endregion
-            #endregion
-            #region Nullable Value Types
-            #region Example 01 
-            //int? Age;
-            //// X = null; // invalid
-
-            //Nullable<int> Y = 10;
-            //Y = null; // valid
-
-            //int? Z = 100;
-            //Z = null;
-            //Console.WriteLine(Z);
-
-            #endregion
-            #region Example 02 [Casting From Nullable type to non-nullable type]
-            //int x = 10;
-            //int? y = x;
-            //// implicit casting
-            //int? A = null;
-            //int B = (int)A;
-            ////explicit casting
-            //if (A is not null)
-            //    B = (int)A;
-            //else
-            //    B = 0;
-
-            //if(A.HasValue)
-            //    B = A.Value;
-            //else
-            //    B = 0;
-
-            //B = A.HasValue ? A.Value : 0;
-
-            //B = A ?? 0;
-
-            //B = A.GetValueOrDefault();
-            #endregion
-            #endregion
-            #region Nullable Reference Types
-            //string? Name = null;
-            //Console.WriteLine(Name);
-            #endregion
-            #region Null-Conditional | Propagtion operator
-
-            Employee employee = new Employee()
-            {
-                Id = 10,
-                Name = "Ahmed",
-            };
-
-            //if (employee is not null)
+            #region Q3 Write a c# Function that accept 4 parameters from user and return result of summation and subtracting of two numbers
+            //bool IsParse1,IsParse2;
+            //int Num1,Num2;
+            //do
             //{
-            //    if (employee.Department is not null)
-            //    {
-            //        Console.WriteLine(employee.Name);
-            //        Console.WriteLine(employee.Department.Name);
-            //    }
-            //}
-
-            //Console.WriteLine(employee?.Department?.Name ?? "Notfound");
-
-            //int[]? Numbers = {1,21,3};
-
-            //int Length = Numbers?.Length ?? 0;
-
-            // Number?.length => 3
-            // Number?.Length => null
-
-            //Console.WriteLine(Length);
-            //if (Numbers is not null)
+            //    Console.Write("please enter the Number the first number : ");
+            //    IsParse1 = int.TryParse(Console.ReadLine(), out Num1);
+            //    Console.Write("please enter the Number the Second number : ");
+            //    IsParse2 = int.TryParse(Console.ReadLine(), out Num2);
+            //} while (!IsParse1 || !IsParse2);
+            //SumSub(Num1, Num2, out int Sum, out int Sub);
+            //Console.WriteLine($"the sum is {Sum} and the sub is {Sub}");
+            #endregion
+            #region Q4 Write a program in C# Sharp to create a function to calculate the sum of the individual digits of a given number.
+            //bool IsParse;
+            //int Num;
+            //do
             //{
+            //    Console.Write("please enter the Number : ");
+            //    IsParse = int.TryParse(Console.ReadLine(), out Num);
 
-            //    for (int i = 0; i < Numbers.Length; i++)
-            //    {
-            //        Console.WriteLine(Numbers[i]);
-            //    }
-            //}
+            //} while (!IsParse);
+            //Console.WriteLine($"The sum of the digits of the number {Num} is: {SumOfIndividualDigitsOfNumber(Num)}");
 
             #endregion
+
 
         }
     }
