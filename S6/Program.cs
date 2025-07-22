@@ -109,6 +109,40 @@
             //    Console.WriteLine();
             //}
             #endregion
+            #region Array Methods
+            //int[] Numbers = { 5, 3, 2, 4, 5 };
+
+            //for (int i = 0; i < Numbers.Length; i++)
+            //{
+            //    Console.WriteLine(Numbers[i]);
+            //}
+            //Console.WriteLine("After Sorting");
+            //Array.Sort(Numbers);
+            //for (int i = 0; i < Numbers.Length; i++)
+            //{
+            //    Console.WriteLine(Numbers[i]);
+            //}
+            //Console.WriteLine("After Reversing");
+            //Array.Reverse(Numbers);
+            //for (int i = 0; i < Numbers.Length; i++)
+            //{
+            //    Console.WriteLine(Numbers[i]);
+            //}
+            //Console.WriteLine("After Clearing");
+            //Array.  Clear(Numbers,2,2);
+            //for (int i = 0; i < Numbers.Length; i++)
+            //{
+            //    Console.WriteLine(Numbers[i]);
+            //}
+
+            //Console.WriteLine(Array.IndexOf(Numbers,5));
+            //Console.WriteLine(Array.LastIndexOf(Numbers,5));
+            //Console.WriteLine(Array.IndexOf(Numbers,4));
+
+            //Array.Resize(ref Numbers, 10);
+
+
+            #endregion
             #endregion
         }
     }
