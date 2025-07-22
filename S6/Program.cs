@@ -17,6 +17,12 @@
                 Console.WriteLine(Pattern);
             }
         }
+        public static void Swap(int X,int Y)
+        {
+            int Temp = X;
+            X = Y;
+            Y = Temp;
+        }
         #endregion
         static void Main(string[] args)
         {
@@ -170,6 +176,19 @@
             //PrintShape(Pattern:@"Welcomwe Mostafa \Hello Amr");
             //PrintShape(Pattern:@"/*\");
 
+            #endregion
+            #region Function Parameters [Value Type]
+            #region Passing by Value
+
+            int A = 9;
+            int B = 4;
+            Console.WriteLine(A);
+            Console.WriteLine(B);
+            Console.WriteLine("After Swaping");
+            Swap(A, B);
+            Console.WriteLine(A);
+            Console.WriteLine(B);
+            #endregion
             #endregion
             #endregion
         }
