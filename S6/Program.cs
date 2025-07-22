@@ -69,7 +69,7 @@
             //    for (int j = 0; j < Marks.GetLength(1); /*j++*/)
             //    {
             //        Console.Write($"Subject Number {j + 1} : ");
-            //        bool IsParse = int.TryParse(Console.ReadLine(), out Marks[i,j]);
+            //        bool IsParse = int.TryParse(Console.ReadLine(), out Marks[i, j]);
             //        if (IsParse)
             //            j++;
             //    }
@@ -82,10 +82,14 @@
             //    Console.WriteLine($"the grades of student Number {i + 1}");
             //    for (int j = 0; j < Marks.GetLength(1); j++)
             //    {
-            //        Console.WriteLine($"Subject Number {j + 1} : {Marks[i,j]}");
-           
+            //        Console.WriteLine($"Subject Number {j + 1} : {Marks[i, j]}");
+
             //    }
             //    Console.WriteLine("===============================");
+            //}
+            //for (int i = 0; i < Marks.Length; i++)
+            //{
+            //    Console.WriteLine(Marks[i / Marks.GetLength(1),i % Marks.GetLength(1)]);
             //}
 
             #endregion
