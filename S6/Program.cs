@@ -359,6 +359,10 @@ namespace S6
             //B = A.GetValueOrDefault();
             #endregion
             #endregion
+            #region Nullable Reference Types
+            //string? Name = null;
+            //Console.WriteLine(Name);
+            #endregion
 
         }
     }
