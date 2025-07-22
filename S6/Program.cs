@@ -363,6 +363,43 @@ namespace S6
             //string? Name = null;
             //Console.WriteLine(Name);
             #endregion
+            #region Null-Conditional | Propagtion operator
+
+            Employee employee = new Employee()
+            {
+                Id = 10,
+                Name = "Ahmed",
+            };
+
+            //if (employee is not null)
+            //{
+            //    if (employee.Department is not null)
+            //    {
+            //        Console.WriteLine(employee.Name);
+            //        Console.WriteLine(employee.Department.Name);
+            //    }
+            //}
+
+            //Console.WriteLine(employee?.Department?.Name ?? "Notfound");
+
+            //int[]? Numbers = {1,21,3};
+
+            //int Length = Numbers?.Length ?? 0;
+
+            // Number?.length => 3
+            // Number?.Length => null
+
+            //Console.WriteLine(Length);
+            //if (Numbers is not null)
+            //{
+
+            //    for (int i = 0; i < Numbers.Length; i++)
+            //    {
+            //        Console.WriteLine(Numbers[i]);
+            //    }
+            //}
+
+            #endregion
 
         }
     }
