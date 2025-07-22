@@ -31,11 +31,11 @@ namespace S6
             X = Y;
             Y = Temp;
         }
-        public static int SumArray(int[] Arr)
+        public static int SumArray(params int[] Arr)
         {
             int Sum = 0;
             //Arr[0] = 100;
-            Arr = new int[] {10,20,30,40};
+            //Arr = new int[] {10,20,30,40};
             for (int i = 0; i < Arr.Length; i++)
             {
                 Sum += Arr[i];
@@ -46,7 +46,7 @@ namespace S6
         {
             int Sum = 0;
             //Arr[0] = 100;
-            Arr = new int[] { 10, 20, 30, 40 };
+            //Arr = new int[] { 10, 20, 30, 40 };
             for (int i = 0; i < Arr.Length; i++)
             {
                 Sum += Arr[i];
@@ -60,6 +60,13 @@ namespace S6
             //return new int[] {Sum, Sub};
             //return [Sum, Sub];
             //return new { Sum, Sub };
+        }
+        public static void Concat<T> (params ReadOnlySpan<T> items)
+        {
+            for (int i = 0; i < items.Length; i++)
+            {
+                Console.WriteLine($"{items[i]}");
+            }
         }
         #endregion
         static void Main(string[] args)
@@ -273,6 +280,24 @@ namespace S6
             //SumSub(10, 5, out int S, out int B);
             //Console.WriteLine(S);
             //Console.WriteLine(B);
+            #endregion
+            #region Function Parameters [Params]
+            #region Before C# 13
+            //int[] Numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            //int Result = SumArray(1, 2, 3, 4, 5, 6, 7, 8, 9);
+            //Console.WriteLine(Result);
+
+            //string Message = string.Format("Hello {0} Your Age is {1}","Ahmed",21);
+            //Console.WriteLine("Hello {0} Your Age is {1}", "Ahmed", 21);
+
+            #region After C# 13
+
+            //Concat<Object>("Hello Ahmed", "Welcome to Route", "Your number is", 123456, "Date is ",DateTime.Now);
+
+            #endregion
+
+
+            #endregion
             #endregion
             #endregion
 
