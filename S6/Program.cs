@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks.Dataflow;
 
 namespace S6
@@ -319,6 +320,43 @@ namespace S6
 
             //int X = (int)obj;
             //Console.WriteLine(X);
+            #endregion
+            #endregion
+            #region Nullable Value Types
+            #region Example 01 
+            //int? Age;
+            //// X = null; // invalid
+
+            //Nullable<int> Y = 10;
+            //Y = null; // valid
+
+            //int? Z = 100;
+            //Z = null;
+            //Console.WriteLine(Z);
+
+            #endregion
+            #region Example 02 [Casting From Nullable type to non-nullable type]
+            //int x = 10;
+            //int? y = x;
+            //// implicit casting
+            //int? A = null;
+            //int B = (int)A;
+            ////explicit casting
+            //if (A is not null)
+            //    B = (int)A;
+            //else
+            //    B = 0;
+
+            //if(A.HasValue)
+            //    B = A.Value;
+            //else
+            //    B = 0;
+
+            //B = A.HasValue ? A.Value : 0;
+
+            //B = A ?? 0;
+
+            //B = A.GetValueOrDefault();
             #endregion
             #endregion
 
