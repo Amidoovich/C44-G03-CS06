@@ -2,6 +2,22 @@
 {
     internal class Program
     {
+        // types of methods 
+        // 1. class member function [static class]
+        // 2. object member function [non-static class]
+        // Employee => static print , Non-static Select
+        //Employee.print
+        //Employee Emp01 = new Employee();
+        //Emp01.Select
+        #region Methods
+        public static void PrintShape(int Count = 5, string Pattern = ":(")
+        {
+            for (int i = 0; i < Count; i++)
+            {
+                Console.WriteLine(Pattern);
+            }
+        }
+        #endregion
         static void Main(string[] args)
         {
             #region Array
@@ -141,6 +157,18 @@
 
             //Array.Resize(ref Numbers, 10);
 
+
+            #endregion
+            #endregion
+            #region Functions
+            #region Functions Prototype
+            //PrintShape(10,":(");
+            //PrintShape(Pattern: ":(", Count: 10);
+
+            //PrintShape(10,"123");
+            //PrintShape(Pattern:"+L+");
+            //PrintShape(Pattern:@"Welcomwe Mostafa \Hello Amr");
+            //PrintShape(Pattern:@"/*\");
 
             #endregion
             #endregion
